@@ -1,0 +1,10 @@
+go 1.19
+
+use (
+	.
+	./commons
+	./database-service
+	./email-consumer
+	./email-mock-server
+	./file-parser-producer
+)

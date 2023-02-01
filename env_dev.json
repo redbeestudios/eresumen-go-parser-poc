@@ -1,0 +1,69 @@
+{
+  "database_service": {
+    "server": {
+      "address": "localhost:8085",
+      "read_timeout": 15,
+      "write_timeout": 15,
+      "idle_timeout": 60
+    },
+    "kafka": {
+      "bootstrap_servers": "localhost",
+      "group_id": "dbGroup",
+      "session_timeout_ms": 6000,
+      "auto_offset_reset": "earliest",
+      "enable_auto_offset_store": false,
+      "topic": "resumen"
+    },
+    "mongodb": {
+      "uri": "mongodb://localhost:27017",
+      "session_timeout_ms": 6000,
+      "database_name": "resumen",
+      "index_collection_name": "index",
+      "user_collection_name": "user"
+    },
+    "sql": {
+      "uri": "sqlserver://sa:Password!@localhost:1433?database=Usuarios",
+      "session_timeout_ms": 6000,
+      "index_table_name": "index",
+      "user_table_name": "user"
+    }
+  },
+  "email_consumer": {
+    "kafka": {
+      "bootstrap_servers": "localhost",
+      "group_id": "eMailGroup",
+      "session_timeout_ms": 6000,
+      "auto_offset_reset": "earliest",
+      "enable_auto_offset_store": false,
+      "topic": "resumen"
+    },
+    "smtp": {
+      "url": "localhost:1025"
+    }
+  },
+  "file_parser_producer": {
+    "server": {
+      "address": "localhost:8080",
+      "read_timeout": 15,
+      "write_timeout": 15,
+      "idle_timeout": 60
+    },
+    "kafka": {
+      "bootstrap_servers": "localhost",
+      "topic": "resumen"
+    }
+  },
+  "email_mock_server": {
+    "enabled": true,
+    "address": "localhost",
+    "port": "1025",
+    "read_timeout": 10,
+    "write_timeout": 10,
+    "max_message_bytes": 1024,
+    "max_recipients": 50,
+    "allow_insecure_auth": true,
+    "redis": {
+      "address": "localhost:6379"
+    }
+  }
+}
