@@ -1,20 +1,11 @@
-# redbee Golang seed
+# eResumen Go-Parser-Poc
 
-Just another redbee seed to make things easier.
+Prueba de concepto para el generador de resumenes en pdf de eResumen
 
-## How to run:
+## Descripción de modulos:
 
-1. Clone this repository
-2. `go run .`
-
-## Scaffolding:
-
-- cmd:
-- internal:
-- pkg:
-
-## Stack:
-
-### Routing:
-
-Using [Gorilla Mux](https://github.com/gorilla/mux) for routing.
+- Commons: Helpers y dtos compartidos entre componentes
+- Database-Service: Microservicio encargado de la persistencia de resumenes
+- Email-Consumer: Microservicio encargado del envio de los resumenes por email
+- Email-Mock-Server: Servidor smtp mockeado para guardar en redis los mails enviados
+- File-Parser-Producer: Punto de entrada para la ejecución del proceso
